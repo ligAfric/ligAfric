@@ -6,137 +6,8 @@
 
 <title>LigAfric Technology Ltd</title>
 
-<style>
-
-body{
-font-family:Arial, sans-serif;
-background:#f4f4f4;
-margin:0;
-padding:0;
-}
-
-header{
-background:#0b7d3b;
-color:white;
-padding:20px;
-text-align:center;
-position:relative;
-}
-
-header h1{
-margin:0;
-}
-
-.menu-btn{
-position:absolute;
-top:20px;
-left:20px;
-font-size:28px;
-cursor:pointer;
-color:white;
-background:none;
-border:none;
-}
-
-.side-menu{
-height:100%;
-width:0;
-position:fixed;
-top:0;
-left:0;
-background:#0b7d3b;
-overflow-x:hidden;
-transition:0.4s;
-padding-top:60px;
-color:white;
-z-index:1000;
-}
-
-.side-menu h2{
-padding-left:20px;
-margin-bottom:20px;
-}
-
-.side-menu button{
-width:90%;
-margin:10px;
-padding:12px;
-background:white;
-color:#0b7d3b;
-border:none;
-font-size:16px;
-cursor:pointer;
-border-radius:5px;
-}
-
-.side-menu button:hover{
-background:#ddd;
-}
-
-.side-menu .closebtn{
-position:absolute;
-top:10px;
-right:25px;
-font-size:35px;
-text-decoration:none;
-color:white;
-cursor:pointer;
-}
-
-.menuContent{
-padding:20px;
-}
-
-.menuContent ul{
-padding-left:20px;
-}
-
-.container{
-width:90%;
-max-width:1000px;
-margin:auto;
-padding:20px;
-}
-
-.card{
-background:white;
-padding:20px;
-margin:15px 0;
-border-radius:8px;
-cursor:pointer;
-box-shadow:0 2px 6px rgba(0,0,0,.2);
-}
-
-.card:hover{
-background:#e8ffe8;
-}
-
-button.main-btn{
-padding:12px 20px;
-background:#0b7d3b;
-border:none;
-color:white;
-border-radius:5px;
-cursor:pointer;
-}
-
-input,select,textarea{
-width:100%;
-padding:10px;
-margin-top:5px;
-margin-bottom:15px;
-box-sizing:border-box;
-}
-
-.page{
-display:none;
-}
-
-.active{
-display:block;
-}
-
-</style>
+<!-- External CSS -->
+<link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -174,7 +45,7 @@ display:block;
 <h3>Vision</h3>
 
 <p>
-To become Africa's leading digital ecosystem that connects people, businesses, professionals, and communities, creating opportunities for economic growth, collaboration, innovation, and sustainable de[...]
+To become Africa's leading digital ecosystem that connects people, businesses, professionals, and communities, creating opportunities for economic growth, collaboration, innovation, and sustainable development.
 </p>
 
 </div>
@@ -184,7 +55,7 @@ To become Africa's leading digital ecosystem that connects people, businesses, p
 <h3>Mission</h3>
 
 <p>
-To provide an inclusive digital platform that empowers farmers, businesses, professionals, sports organizations, and community groups by enabling them to connect, trade, collaborate, learn, and access[...]
+To provide an inclusive digital platform that empowers farmers, businesses, professionals, sports organizations, and community groups by enabling them to connect, trade, collaborate, learn, and achieve their economic potential.
 </p>
 
 </div>
@@ -287,7 +158,7 @@ Logistics Services
 Agricultural Resources
 </div>
 
-<button onclick="goHome()">Back</button>
+<button class="main-btn" onclick="goHome()">Back</button>
 
 </div>
 
@@ -315,7 +186,7 @@ Investment Opportunities
 Business Networking
 </div>
 
-<button onclick="goHome()">Back</button>
+<button class="main-btn" onclick="goHome()">Back</button>
 
 </div>
 
@@ -337,7 +208,7 @@ Business Networking
 
 <div class="card">Project Consultants</div>
 
-<button onclick="goHome()">Back</button>
+<button class="main-btn" onclick="goHome()">Back</button>
 
 </div>
 
@@ -369,7 +240,7 @@ Community Groups
 NGOs & CBOs
 </div>
 
-<button onclick="goHome()">Back</button>
+<button class="main-btn" onclick="goHome()">Back</button>
 
 </div>
 
@@ -380,44 +251,34 @@ NGOs & CBOs
 <form id="farmerForm">
 
 <label>Full Name</label>
-
-<input type="text" required>
+<input type="text" name="fullName" required>
 
 <label>National ID</label>
-
-<input type="text">
+<input type="text" name="nationalId">
 
 <label>Phone Number</label>
-
-<input type="tel">
+<input type="tel" name="phone">
 
 <label>Email</label>
-
-<input type="email">
+<input type="email" name="email">
 
 <label>County</label>
-
-<input type="text">
+<input type="text" name="county">
 
 <label>Sub County</label>
-
-<input type="text">
+<input type="text" name="subCounty">
 
 <label>Ward</label>
-
-<input type="text">
+<input type="text" name="ward">
 
 <label>Village</label>
-
-<input type="text">
+<input type="text" name="village">
 
 <label>Farm Size (Acres)</label>
-
-<input type="number">
+<input type="number" name="farmSize">
 
 <label>Main Crop</label>
-
-<select>
+<select name="mainCrop">
 
 <option>Maize</option>
 
@@ -434,8 +295,7 @@ NGOs & CBOs
 </select>
 
 <label>Livestock</label>
-
-<textarea></textarea>
+<textarea name="livestock"></textarea>
 
 <button type="submit" class="main-btn">Register Farmer</button>
 
@@ -451,31 +311,31 @@ NGOs & CBOs
 
 <h2>Farmer Profile</h2>
 
-<form>
+<form id="farmerProfileForm">
 
-<input type="text" placeholder="Full Name">
+<input type="text" name="fullName" placeholder="Full Name">
 
-<input type="text" placeholder="National ID">
+<input type="text" name="nationalId" placeholder="National ID">
 
-<input type="tel" placeholder="Phone Number">
+<input type="tel" name="phone" placeholder="Phone Number">
 
-<input type="email" placeholder="Email Address">
+<input type="email" name="email" placeholder="Email Address">
 
-<input type="text" placeholder="County">
+<input type="text" name="county" placeholder="County">
 
-<input type="text" placeholder="Sub County">
+<input type="text" name="subCounty" placeholder="Sub County">
 
-<input type="text" placeholder="Ward">
+<input type="text" name="ward" placeholder="Ward">
 
-<input type="text" placeholder="Village">
+<input type="text" name="village" placeholder="Village">
 
-<input type="number" placeholder="Farm Size (Acres)">
+<input type="number" name="farmSize" placeholder="Farm Size (Acres)">
 
-<input type="text" placeholder="Main Crop">
+<input type="text" name="mainCrop" placeholder="Main Crop">
 
-<input type="text" placeholder="Livestock">
+<input type="text" name="livestock" placeholder="Livestock">
 
-<textarea placeholder="Describe your farm"></textarea>
+<textarea name="farmDescription" placeholder="Describe your farm"></textarea>
 
 <button type="submit" class="main-btn">Save Profile</button>
 
@@ -487,51 +347,8 @@ NGOs & CBOs
 
 </div>
 
-<script>
-
-function openMenu(){
-  document.getElementById("sideMenu").style.width = "350px";
-}
-
-function closeMenu(){
-  document.getElementById("sideMenu").style.width = "0";
-}
-
-function showSection(id){
-  let sections = document.getElementsByClassName("menuContent");
-  for(let i = 0; i < sections.length; i++){
-    sections[i].style.display = "none";
-  }
-  document.getElementById(id).style.display = "block";
-}
-
-function openPage(page){
-
-document.querySelectorAll(".page").forEach(p=>{
-
-p.classList.remove("active");
-
-});
-
-document.getElementById(page).classList.add("active");
-
-}
-
-function goHome(){
-
-openPage("home");
-
-}
-
-document.getElementById("farmerForm").addEventListener("submit",function(e){
-
-e.preventDefault();
-
-alert("Farmer Registered Successfully!");
-
-});
-
-</script>
+<!-- External JavaScript -->
+<script src="js/app.js"></script>
 
 </body>
 
