@@ -1,110 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LigAfric | The Unified Digital Ecosystem</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', system-ui, sans-serif; background: #fafafa; color: #333; line-height: 1.6; }
-        header { background: #0f172a; color: white; padding: 80px 20px; text-align: center; }
-        header h1 { font-size: 3rem; margin-bottom: 15px; letter-spacing: -1px; }
-        header p { font-size: 1.25rem; max-width: 700px; margin: 0 auto; color: #94a3b8; }
-        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
-        h2 { text-align: center; color: #1e293b; margin-top: 50px; margin-bottom: 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border-top: 4px solid #10b981; }
-        .card h3 { margin-bottom: 10px; color: #1e293b; }
-        .vvm-section { background: white; padding: 35px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border-left: 5px solid #3b82f6; margin-bottom: 40px; }
-        .vvm-block { margin-bottom: 25px; }
-        .vvm-block:last-child { margin-bottom: 0; }
-        .vvm-block strong { font-size: 1.3rem; color: #1e293b; display: block; margin-bottom: 8px; border-bottom: 1px solid #e2e8f0; padding-bottom: 4px; }
-        .value-list { list-style: none; padding-left: 0; margin-top: 8px; }
-        .value-list li { margin-bottom: 8px; padding-left: 15px; border-left: 2px solid #3b82f6; }
-        .timeline { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); margin-top: 20px; }
-        .timeline-item { margin-bottom: 15px; padding-left: 15px; border-left: 3px solid #10b981; }
-        .timeline-item ul { padding-left: 20px; margin: 10px 0; color: #475569; }
-        .timeline-item li { margin-bottom: 5px; }
-        .form-section { background: #f1f5f9; padding: 40px; text-align: center; border-radius: 8px; margin-top: 40px; border: 1px solid #e2e8f0; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LigAfric Agriculture</title>
+
+<style>
+
+body{
+font-family:Arial, sans-serif;
+background:#f4f4f4;
+margin:0;
+padding:0;
+}
+
+header{
+background:#0b7d3b;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.container{
+width:90%;
+max-width:1000px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+margin:15px 0;
+border-radius:8px;
+cursor:pointer;
+box-shadow:0 2px 6px rgba(0,0,0,.2);
+}
+
+.card:hover{
+background:#e8ffe8;
+}
+
+button{
+padding:12px 20px;
+background:#0b7d3b;
+border:none;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+input,select,textarea{
+width:100%;
+padding:10px;
+margin-top:5px;
+margin-bottom:15px;
+}
+
+.page{
+display:none;
+}
+
+.active{
+display:block;
+}
+
+</style>
+
 </head>
+
 <body>
 
-    <header>
-        <h1>LigAfric</h1>
-        <p>Building the interconnected digital super-app ecosystem for Africa's future. Connecting commerce, community, and talent on a single platform.</p>
-    </header>
+<header>
 
-    <div class="container">
-        
-        <!-- CORPORATE IDENTITY SECTION -->
-        <h2>Our Identity</h2>
-        <div class="vvm-section">
-            <div class="vvm-block">
-                <strong>👁️ Vision</strong>
-                <p>To become Africa's leading digital ecosystem that connects people, businesses, professionals, and communities, creating opportunities for economic growth, collaboration, innovation, and sustainable development.</p>
-            </div>
-            <div class="vvm-block">
-                <strong>🎯 Mission</strong>
-                <p>To provide an inclusive digital platform that empowers farmers, businesses, professionals, sports organizations, and community groups by enabling them to connect, trade, collaborate, learn, and access opportunities regardless of their location.</p>
-            </div>
-            <div class="vvm-block">
-                <strong>💎 Core Values</strong>
-                <ul class="value-list">
-                    <li><strong>Innovation</strong> – Using technology to solve everyday challenges.</li>
-                    <li><strong>Integrity</strong> – Building trust through transparency and accountability.</li>
-                    <li><strong>Inclusivity</strong> – Serving rural and urban communities alike.</li>
-                    <li><strong>Collaboration</strong> – Connecting people and organizations for mutual growth.</li>
-                    <li><strong>Empowerment</strong> – Creating opportunities for individuals and businesses.</li>
-                    <li><strong>Excellence</strong> – Delivering reliable, high-quality digital services.</li>
-                    <li><strong>Sustainability</strong> – Supporting long-term economic and social development.</li>
-                </ul>
-            </div>
-        </div>
+<h1>LigAfric Agriculture</h1>
 
-        <!-- THE PILLARS -->
-        <h2>The Core Ecosystem Pillars</h2>
-        <div class="grid">
-            <div class="card" style="border-top-color: #10b981;">
-                <h3>🌾 Smart Agriculture & Business</h3>
-                <p>Connecting smallholder farmers, cooperatives, and local businesses directly to regional marketplaces, logistics providers, and supply chains.</p>
-            </div>
-            <div class="card" style="border-top-color: #3b82f6;">
-                <h3>⚽ Sports & Communities</h3>
-                <p>Empowering local athletes, academies, and professional service networks with digital management profiles and talent discovery tools.</p>
-            </div>
-        </div>
+</header>
 
-        <!-- THE ROADMAP -->
-        <h2>Ecosystem Implementation Roadmap</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <strong>Phase 1: Foundation (Minimum Viable Product)</strong>
-                <p style="margin-top: 5px; font-weight: bold; color: #10b981;">Goal: Build users and prove the platform's value.</p>
-                <p style="margin-top: 5px;">Launching the essential platform features:</p>
-                <ul>
-                    <li>User registration and profiles</li>
-                    <li>Secure login</li>
-                    <li>Marketplace for farmers</li>
-                    <li>Marketplace for businesses</li>
-                    <li>Messaging between users</li>
-                    <li>Search and filters</li>
-                    <li>Ratings and reviews</li>
-                    <li>Admin dashboard</li>
-                </ul>
-            </div>
-            <div class="timeline-item" style="border-left-color: #94a3b8;">
-                <strong style="color: #64748b;">Phase 2: Scale & Ecosystem Integration</strong>
-                <p style="color: #64748b;">Expanding into full cross-border service matching, integrated sports scouting networks, and unified ecosystem analytics.</p>
-            </div>
-        </div>
+<div class="container">
 
-        <!-- WAITLIST SECTION -->
-        <div class="form-section">
-            <h2>Join the Early Access Waitlist</h2>
-            <p>We are currently validating our Phase 1 MVP features. Secure your spot to help shape the LigAfric ecosystem layout.</p>
-        </div>
-    </div>
+<div id="home" class="page active">
+
+<h2>Select Module</h2>
+
+<div class="card" onclick="openPage('registration')">
+
+<h3>🌾 Farmer Registration</h3>
+
+<p>Register as a farmer.</p>
+
+</div>
+
+<div class="card">
+
+<h3>🛒 Marketplace</h3>
+
+<p>Coming Soon</p>
+
+</div>
+
+<div class="card">
+
+<h3>🚚 Logistics</h3>
+
+<p>Coming Soon</p>
+
+</div>
+
+</div>
+
+<div id="registration" class="page">
+
+<h2>Farmer Registration</h2>
+
+<form id="farmerForm">
+
+<label>Full Name</label>
+
+<input type="text" required>
+
+<label>National ID</label>
+
+<input type="text">
+
+<label>Phone Number</label>
+
+<input type="tel">
+
+<label>Email</label>
+
+<input type="email">
+
+<label>County</label>
+
+<input type="text">
+
+<label>Sub County</label>
+
+<input type="text">
+
+<label>Ward</label>
+
+<input type="text">
+
+<label>Village</label>
+
+<input type="text">
+
+<label>Farm Size (Acres)</label>
+
+<input type="number">
+
+<label>Main Crop</label>
+
+<select>
+
+<option>Maize</option>
+
+<option>Beans</option>
+
+<option>Coffee</option>
+
+<option>Tea</option>
+
+<option>Rice</option>
+
+<option>Vegetables</option>
+
+</select>
+
+<label>Livestock</label>
+
+<textarea></textarea>
+
+<button type="submit">Register Farmer</button>
+
+</form>
+
+<br>
+
+<button onclick="goHome()">Back</button>
+
+</div>
+
+</div>
+
+<script>
+
+function openPage(page){
+
+document.querySelectorAll(".page").forEach(p=>{
+
+p.classList.remove("active");
+
+});
+
+document.getElementById(page).classList.add("active");
+
+}
+
+function goHome(){
+
+openPage("home");
+
+}
+
+document.getElementById("farmerForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+alert("Farmer Registered Successfully!");
+
+});
+
+</script>
 
 </body>
+
 </html>
