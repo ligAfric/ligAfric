@@ -1,0 +1,298 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+  background: linear-gradient(135deg, #0b7d3b 0%, #0a5a2a 100%);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Menu Button */
+.menu-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  background: none;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.menu-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Side Menu */
+.side-menu {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #0b7d3b;
+  overflow-x: hidden;
+  transition: width 0.4s ease;
+  padding-top: 60px;
+  color: white;
+  z-index: 1000;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.side-menu h2 {
+  padding-left: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.side-menu button {
+  width: 90%;
+  margin: 10px auto;
+  display: block;
+  padding: 12px;
+  background: white;
+  color: #0b7d3b;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.side-menu button:hover {
+  background: #ddd;
+  transform: translateX(5px);
+}
+
+.side-menu .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.side-menu .closebtn:hover {
+  transform: rotate(90deg);
+}
+
+.menuContent {
+  padding: 20px;
+  display: none;
+}
+
+.menuContent.active {
+  display: block;
+}
+
+.menuContent h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.menuContent ul {
+  padding-left: 20px;
+}
+
+.menuContent li {
+  margin-bottom: 8px;
+  list-style-type: disc;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Card Styles */
+.card {
+  background: white;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-left: 4px solid #0b7d3b;
+}
+
+.card:hover {
+  background: #e8ffe8;
+  box-shadow: 0 4px 12px rgba(11, 125, 59, 0.2);
+  transform: translateY(-2px);
+}
+
+.card h3 {
+  color: #0b7d3b;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.card p {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Button Styles */
+button.main-btn {
+  padding: 12px 20px;
+  background: #0b7d3b;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+button.main-btn:hover {
+  background: #0a5a2a;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button.main-btn:active {
+  transform: scale(0.98);
+}
+
+/* Form Styles */
+form {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #333;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #0b7d3b;
+  box-shadow: 0 0 5px rgba(11, 125, 59, 0.2);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Page Display */
+.page {
+  display: none;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 22px;
+  }
+
+  .side-menu {
+    padding-top: 40px;
+  }
+
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  form {
+    padding: 15px;
+  }
+
+  .card {
+    margin: 10px 0;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-btn {
+    font-size: 24px;
+    top: 15px;
+    left: 15px;
+  }
+
+  header h1 {
+    font-size: 18px;
+  }
+
+  header {
+    padding: 15px;
+  }
+
+  .side-menu {
+    width: 100% !important;
+  }
+
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+}
