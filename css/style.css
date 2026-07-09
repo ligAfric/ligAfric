@@ -296,3 +296,31 @@ textarea {
     padding: 10px;
   }
 }
+
+/* Marketplace & modal styles */
+.market-header { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:16px; flex-wrap:wrap; }
+.search-group { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+.search-group input, .search-group select { padding:8px; border-radius:6px; border:1px solid #ddd; }
+.product-card { display:block; padding:16px; margin-bottom:10px; }
+.product-actions { margin-top:12px; display:flex; gap:8px; flex-wrap:wrap; }
+
+.modal { display:none; position:fixed; z-index:3000; left:0; top:0; width:100%; height:100%; overflow:auto; background:rgba(0,0,0,0.4); }
+.modal .modal-content { background:white; margin:5% auto; padding:20px; border-radius:8px; width:90%; max-width:680px; box-shadow:0 6px 18px rgba(0,0,0,0.2); position:relative; }
+.modal .modal-content.small { max-width:480px; }
+.modal .modal-close { position:absolute; right:14px; top:8px; font-size:28px; cursor:pointer; }
+
+.cart-row { display:flex; gap:12px; align-items:center; justify-content:space-between; padding:10px; border-bottom:1px solid #eee; }
+.cart-row input[type="number"] { padding:6px; }
+
+.seller-grid { display:flex; gap:20px; flex-wrap:wrap; }
+.seller-col { flex:1 1 380px; }
+
+.my-product-row { padding:12px; margin-bottom:8px; }
+
+.rating { color:#ffb400; font-weight:600; }
+
+/* small responsive tweaks */
+@media (max-width:768px) {
+  .market-header { flex-direction:column; align-items:stretch; }
+  .search-group { width:100%; }
+}
