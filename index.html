@@ -174,7 +174,7 @@ display:block;
 <h3>Vision</h3>
 
 <p>
-To become Africa's leading digital ecosystem that connects people, businesses, professionals, and communities, creating opportunities for economic growth, collaboration, innovation, and sustainable development.
+To become Africa's leading digital ecosystem that connects people, businesses, professionals, and communities, creating opportunities for economic growth, collaboration, innovation, and sustainable de[...]
 </p>
 
 </div>
@@ -184,7 +184,7 @@ To become Africa's leading digital ecosystem that connects people, businesses, p
 <h3>Mission</h3>
 
 <p>
-To provide an inclusive digital platform that empowers farmers, businesses, professionals, sports organizations, and community groups by enabling them to connect, trade, collaborate, learn, and access opportunities regardless of their location.
+To provide an inclusive digital platform that empowers farmers, businesses, professionals, sports organizations, and community groups by enabling them to connect, trade, collaborate, learn, and access[...]
 </p>
 
 </div>
@@ -239,31 +239,137 @@ To provide an inclusive digital platform that empowers farmers, businesses, prof
 
 <div id="home" class="page active">
 
-<h2>Select Module</h2>
+<h2>Main Services</h2>
+
+<div class="card" onclick="openPage('agriculture')">
+<h3>🌾 Agriculture</h3>
+<p>Farmers, Markets, Logistics and Agricultural Services</p>
+</div>
+
+<div class="card" onclick="openPage('business')">
+<h3>🏢 Business</h3>
+<p>Business profiles, trading and networking</p>
+</div>
+
+<div class="card" onclick="openPage('consultancy')">
+<h3>👨‍💼 Professional Consultancy</h3>
+<p>Legal, Engineering, Medical, Financial and ICT professionals</p>
+</div>
+
+<div class="card" onclick="openPage('sports')">
+<h3>⚽ Sports & Communities</h3>
+<p>Sports clubs, academies, communities and talent development</p>
+</div>
+
+</div>
+
+<div id="agriculture" class="page">
+
+<h2>🌾 Agriculture</h2>
 
 <div class="card" onclick="openPage('registration')">
+Farmer Registration
+</div>
 
-<h3>🌾 Farmer Registration</h3>
-
-<p>Register as a farmer.</p>
-
+<div class="card" onclick="openPage('farmerProfile')">
+Farmer Profile
 </div>
 
 <div class="card">
-
-<h3>🛒 Marketplace</h3>
-
-<p>Coming Soon</p>
-
+Agricultural Markets
 </div>
 
 <div class="card">
+Logistics Services
+</div>
 
-<h3>🚚 Logistics</h3>
+<div class="card">
+Agricultural Resources
+</div>
 
-<p>Coming Soon</p>
+<button onclick="goHome()">Back</button>
 
 </div>
+
+<div id="business" class="page">
+
+<h2>🏢 Business</h2>
+
+<div class="card">
+Business Registration
+</div>
+
+<div class="card">
+Business Marketplace
+</div>
+
+<div class="card">
+Suppliers Directory
+</div>
+
+<div class="card">
+Investment Opportunities
+</div>
+
+<div class="card">
+Business Networking
+</div>
+
+<button onclick="goHome()">Back</button>
+
+</div>
+
+<div id="consultancy" class="page">
+
+<h2>👨‍💼 Professional Consultancy</h2>
+
+<div class="card">Lawyers</div>
+
+<div class="card">Engineers</div>
+
+<div class="card">Doctors</div>
+
+<div class="card">Architects</div>
+
+<div class="card">Accountants</div>
+
+<div class="card">ICT Consultants</div>
+
+<div class="card">Project Consultants</div>
+
+<button onclick="goHome()">Back</button>
+
+</div>
+
+<div id="sports" class="page">
+
+<h2>⚽ Sports & Communities</h2>
+
+<div class="card">
+Sports Clubs
+</div>
+
+<div class="card">
+Sports Academies
+</div>
+
+<div class="card">
+Player Registration
+</div>
+
+<div class="card">
+Scouts
+</div>
+
+<div class="card">
+Community Groups
+</div>
+
+<div class="card">
+NGOs & CBOs
+</div>
+
+<button onclick="goHome()">Back</button>
 
 </div>
 
@@ -338,6 +444,44 @@ To provide an inclusive digital platform that empowers farmers, businesses, prof
 <br>
 
 <button class="main-btn" onclick="goHome()">Back</button>
+
+</div>
+
+<div id="farmerProfile" class="page">
+
+<h2>Farmer Profile</h2>
+
+<form>
+
+<input type="text" placeholder="Full Name">
+
+<input type="text" placeholder="National ID">
+
+<input type="tel" placeholder="Phone Number">
+
+<input type="email" placeholder="Email Address">
+
+<input type="text" placeholder="County">
+
+<input type="text" placeholder="Sub County">
+
+<input type="text" placeholder="Ward">
+
+<input type="text" placeholder="Village">
+
+<input type="number" placeholder="Farm Size (Acres)">
+
+<input type="text" placeholder="Main Crop">
+
+<input type="text" placeholder="Livestock">
+
+<textarea placeholder="Describe your farm"></textarea>
+
+<button type="submit" class="main-btn">Save Profile</button>
+
+</form>
+
+<button class="main-btn" onclick="openPage('agriculture')">Back</button>
 
 </div>
 
