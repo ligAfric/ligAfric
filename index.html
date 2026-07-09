@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>LigAfric Agriculture</title>
+<title>LigAfric Technology Ltd</title>
 
 <style>
 
@@ -20,6 +20,75 @@ background:#0b7d3b;
 color:white;
 padding:20px;
 text-align:center;
+position:relative;
+}
+
+header h1{
+margin:0;
+}
+
+.menu-btn{
+position:absolute;
+top:20px;
+left:20px;
+font-size:28px;
+cursor:pointer;
+color:white;
+background:none;
+border:none;
+}
+
+.side-menu{
+height:100%;
+width:0;
+position:fixed;
+top:0;
+left:0;
+background:#0b7d3b;
+overflow-x:hidden;
+transition:0.4s;
+padding-top:60px;
+color:white;
+z-index:1000;
+}
+
+.side-menu h2{
+padding-left:20px;
+margin-bottom:20px;
+}
+
+.side-menu button{
+width:90%;
+margin:10px;
+padding:12px;
+background:white;
+color:#0b7d3b;
+border:none;
+font-size:16px;
+cursor:pointer;
+border-radius:5px;
+}
+
+.side-menu button:hover{
+background:#ddd;
+}
+
+.side-menu .closebtn{
+position:absolute;
+top:10px;
+right:25px;
+font-size:35px;
+text-decoration:none;
+color:white;
+cursor:pointer;
+}
+
+.menuContent{
+padding:20px;
+}
+
+.menuContent ul{
+padding-left:20px;
 }
 
 .container{
@@ -42,7 +111,7 @@ box-shadow:0 2px 6px rgba(0,0,0,.2);
 background:#e8ffe8;
 }
 
-button{
+button.main-btn{
 padding:12px 20px;
 background:#0b7d3b;
 border:none;
@@ -56,6 +125,7 @@ width:100%;
 padding:10px;
 margin-top:5px;
 margin-bottom:15px;
+box-sizing:border-box;
 }
 
 .page{
@@ -74,9 +144,96 @@ display:block;
 
 <header>
 
-<h1>LigAfric Agriculture</h1>
+<button class="menu-btn" onclick="openMenu()">☰</button>
+
+<h1>LigAfric Technology Ltd</h1>
 
 </header>
+
+<!-- Side Navigation -->
+<div id="sideMenu" class="side-menu">
+
+<a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
+
+<h2>LigAfric Technology Ltd</h2>
+
+<button onclick="showSection('vision')">Vision</button>
+
+<button onclick="showSection('mission')">Mission</button>
+
+<button onclick="showSection('values')">Core Values</button>
+
+<button onclick="showSection('resources')">Resources</button>
+
+<button onclick="showSection('helpline')">Helpline</button>
+
+<hr>
+
+<div id="vision" class="menuContent">
+
+<h3>Vision</h3>
+
+<p>
+To become Africa's leading digital ecosystem that connects people, businesses, professionals, and communities, creating opportunities for economic growth, collaboration, innovation, and sustainable development.
+</p>
+
+</div>
+
+<div id="mission" class="menuContent" style="display:none;">
+
+<h3>Mission</h3>
+
+<p>
+To provide an inclusive digital platform that empowers farmers, businesses, professionals, sports organizations, and community groups by enabling them to connect, trade, collaborate, learn, and access opportunities regardless of their location.
+</p>
+
+</div>
+
+<div id="values" class="menuContent" style="display:none;">
+
+<h3>Core Values</h3>
+
+<ul>
+
+<li>Innovation – Using technology to solve everyday challenges.</li>
+
+<li>Integrity – Building trust through transparency and accountability.</li>
+
+<li>Inclusivity – Serving rural and urban communities alike.</li>
+
+<li>Collaboration – Connecting people and organizations for mutual growth.</li>
+
+<li>Empowerment – Creating opportunities for individuals and businesses.</li>
+
+<li>Excellence – Delivering reliable, high-quality digital services.</li>
+
+<li>Sustainability – Supporting long-term economic and social development.</li>
+
+</ul>
+
+</div>
+
+<div id="resources" class="menuContent" style="display:none;">
+
+<h3>Resources</h3>
+
+<p>Business documents, agricultural guides, user manuals, market reports, FAQs, and learning materials will appear here.</p>
+
+</div>
+
+<div id="helpline" class="menuContent" style="display:none;">
+
+<h3>Helpline</h3>
+
+<p>Email: support@ligafric.com</p>
+
+<p>Phone: +254 XXX XXX XXX</p>
+
+<p>Working Hours: Monday - Friday (8:00 AM - 5:00 PM)</p>
+
+</div>
+
+</div>
 
 <div class="container">
 
@@ -174,19 +331,35 @@ display:block;
 
 <textarea></textarea>
 
-<button type="submit">Register Farmer</button>
+<button type="submit" class="main-btn">Register Farmer</button>
 
 </form>
 
 <br>
 
-<button onclick="goHome()">Back</button>
+<button class="main-btn" onclick="goHome()">Back</button>
 
 </div>
 
 </div>
 
 <script>
+
+function openMenu(){
+  document.getElementById("sideMenu").style.width = "350px";
+}
+
+function closeMenu(){
+  document.getElementById("sideMenu").style.width = "0";
+}
+
+function showSection(id){
+  let sections = document.getElementsByClassName("menuContent");
+  for(let i = 0; i < sections.length; i++){
+    sections[i].style.display = "none";
+  }
+  document.getElementById(id).style.display = "block";
+}
 
 function openPage(page){
 
