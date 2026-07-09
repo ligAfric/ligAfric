@@ -19,6 +19,10 @@
 
 <h1>LigAfric Technology Ltd</h1>
 
+<button class="cart-btn" onclick="openPage('cart')" title="Shopping Cart">
+  🛒 <span id="cartCount" class="cart-count">0</span>
+</button>
+
 </header>
 
 <!-- Side Navigation -->
@@ -45,7 +49,7 @@
 <h3>Vision</h3>
 
 <p>
-To become Africa's leading digital ecosystem that connects people, businesses, professionals, and communities, creating opportunities for economic growth, collaboration, innovation, and sustainabl[...]
+To become Africa's leading digital ecosystem that connects people, businesses, professionals, and communities, creating opportunities for economic growth, collaboration, innovation, and sustainability.
 </p>
 
 </div>
@@ -55,7 +59,7 @@ To become Africa's leading digital ecosystem that connects people, businesses, p
 <h3>Mission</h3>
 
 <p>
-To provide an inclusive digital platform that empowers farmers, businesses, professionals, sports organizations, and community groups by enabling them to connect, trade, collaborate, learn, and ac[...]
+To provide an inclusive digital platform that empowers farmers, businesses, professionals, sports organizations, and community groups by enabling them to connect, trade, collaborate, learn, and achieve their goals.
 </p>
 
 </div>
@@ -120,6 +124,11 @@ To provide an inclusive digital platform that empowers farmers, businesses, prof
 <div class="card" onclick="openPage('business')">
 <h3>🏢 Business</h3>
 <p>Business profiles, trading and networking</p>
+</div>
+
+<div class="card" onclick="openPage('marketplace')">
+<h3>🛍️ Marketplace</h3>
+<p>Buy and sell products from businesses across Africa</p>
 </div>
 
 <div class="card" onclick="openPage('consultancy')">
@@ -190,6 +199,111 @@ Business Networking
 
 </div>
 
+<!-- Marketplace Page -->
+<div id="marketplace" class="page">
+
+<h2>🛍️ Marketplace</h2>
+
+<div class="marketplace-container">
+
+<!-- Filters Sidebar -->
+<aside class="marketplace-filters">
+<h3>Filters</h3>
+
+<div class="filter-group">
+<label>Category</label>
+<select id="categoryFilter" onchange="filterMarketplace()">
+<option value="">All Categories</option>
+<option value="Agricultural">Agricultural</option>
+<option value="Electronics">Electronics</option>
+<option value="Textiles">Textiles</option>
+<option value="Food">Food & Beverages</option>
+<option value="Services">Services</option>
+</select>
+</div>
+
+<div class="filter-group">
+<label>Price Range</label>
+<input type="number" id="minPrice" placeholder="Min Price" onchange="filterMarketplace()">
+<input type="number" id="maxPrice" placeholder="Max Price" onchange="filterMarketplace()">
+</div>
+
+<div class="filter-group">
+<label>Rating</label>
+<select id="ratingFilter" onchange="filterMarketplace()">
+<option value="">All Ratings</option>
+<option value="4">4+ Stars</option>
+<option value="3">3+ Stars</option>
+<option value="2">2+ Stars</option>
+<option value="1">1+ Stars</option>
+</select>
+</div>
+
+<button class="main-btn" onclick="resetFilters()">Reset Filters</button>
+
+</aside>
+
+<!-- Products Grid -->
+<div class="marketplace-products">
+
+<div class="marketplace-header">
+<input type="text" id="searchInput" placeholder="Search products..." class="search-bar" onkeyup="searchMarketplace()">
+</div>
+
+<div id="productGrid" class="product-grid">
+<!-- Products will be loaded here by JavaScript -->
+</div>
+
+</div>
+
+</div>
+
+<button class="main-btn" onclick="goHome()">Back</button>
+
+</div>
+
+<!-- Shopping Cart Page -->
+<div id="cart" class="page">
+
+<h2>🛒 Shopping Cart</h2>
+
+<div class="cart-container">
+
+<table id="cartTable" class="cart-table">
+<thead>
+<tr>
+<th>Product</th>
+<th>Price</th>
+<th>Quantity</th>
+<th>Total</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody id="cartTableBody">
+<!-- Cart items will be displayed here -->
+</tbody>
+</table>
+
+<div class="cart-summary" id="cartSummary" style="display:none;">
+<h3>Cart Summary</h3>
+<p>Subtotal: <strong id="subtotal">0.00</strong></p>
+<p>Tax (10%): <strong id="tax">0.00</strong></p>
+<p>Shipping: <strong id="shipping">500.00</strong></p>
+<hr>
+<h4>Total: <strong id="total">0.00</strong></h4>
+<button class="main-btn" onclick="checkout()">Proceed to Checkout</button>
+<button class="main-btn" style="background: #999;" onclick="openPage('marketplace')">Continue Shopping</button>
+</div>
+
+<div id="emptyCart" class="empty-cart">
+<p>Your cart is empty</p>
+<button class="main-btn" onclick="openPage('marketplace')">Start Shopping</button>
+</div>
+
+</div>
+
+</div>
+
 <div id="consultancy" class="page">
 
 <h2>👨‍💼 Professional Consultancy</h2>
@@ -248,7 +362,7 @@ NGOs & CBOs
 
 <h2>Farmer Registration</h2>
 
-<form id="farmerForm">
+<form id="farmerForm" onsubmit="handleFarmerRegistration(event)">
 
 <label>Full Name</label>
 <input type="text" name="fullName" required>
@@ -311,7 +425,7 @@ NGOs & CBOs
 
 <h2>Farmer Profile</h2>
 
-<form id="farmerProfileForm">
+<form id="farmerProfileForm" onsubmit="handleProfileUpdate(event)">
 
 <input type="text" name="fullName" placeholder="Full Name">
 
@@ -348,6 +462,7 @@ NGOs & CBOs
 </div>
 
 <!-- External JavaScript -->
+<script src="js/products.json"></script>
 <script src="js/app.js"></script>
 
 </body>
